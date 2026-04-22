@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İyi Ki Doğdun!</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+    <div class="background-animation"></div>
+    
+    <main class="container">
+        <header class="hero-section">
+            <h1 class="glitch-text" data-text="İyi Ki Doğdun!">İyi Ki Doğdun!</h1>
+            <p class="subtitle">Bugün senin günün, hadi kutlayalım! 🎉</p>
+        </header>
+
+        <div class="cake-container">
+            <div class="cake-wrapper" id="cakeWrapper">
+                <img src="assets/cake.png" alt="Doğum Günü Pastası" class="cake-image" id="cakeImage">
+                <div class="candle-container" id="candleContainer">
+                    <div class="candle" style="left: 40%; bottom: 85%;">
+                        <div class="flame"></div>
+                    </div>
+                    <div class="candle" style="left: 50%; bottom: 90%;">
+                        <div class="flame"></div>
+                    </div>
+                    <div class="candle" style="left: 60%; bottom: 85%;">
+                        <div class="flame"></div>
+                    </div>
+                </div>
+            </div>
+            <p class="instruction">Mumları üflemek için pastaya tıkla! 🎂</p>
+        </div>
+
+        <section class="message-card" id="messageCard">
+            <div class="card-content">
+                <h2>Mutlu Yıllar! ✨</h2>
+                <p>Yeni yaşında sağlık, mutluluk ve başarı hep seninle olsun. Her günün bir öncekinden daha güzel geçsin!</p>
+                <button class="btn-primary" id="celebrateMore">Bir Daha Patlat! 🎊</button>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>Sevgiyle yapıldı ❤️</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -64,13 +64,14 @@ body {
 
 /* Hero Section */
 .hero-section {
-    margin-bottom: 3rem;
+    margin-bottom: clamp(1rem, 5vw, 3rem);
 }
 
 h1 {
-    font-size: 4rem;
+    font-size: clamp(2.5rem, 10vw, 4.5rem);
     font-weight: 800;
     margin-bottom: 1rem;
+    line-height: 1.1;
     background: linear-gradient(to right, var(--primary), var(--accent), var(--secondary));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -79,16 +80,17 @@ h1 {
 }
 
 .subtitle {
-    font-size: 1.2rem;
+    font-size: clamp(1rem, 4vw, 1.3rem);
     opacity: 0.8;
-    letter-spacing: 1px;
+    padding: 0 1rem;
     animation: fadeIn 1.5s ease-out;
 }
 
 /* Cake Section */
 .cake-container {
     position: relative;
-    margin: 4rem 0;
+    margin: clamp(2rem, 8vw, 4rem) 0;
+    width: 100%;
 }
 
 .cake-wrapper {
@@ -96,6 +98,7 @@ h1 {
     display: inline-block;
     cursor: pointer;
     transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    max-width: 100%;
 }
 
 .cake-wrapper:hover {
@@ -107,7 +110,7 @@ h1 {
 }
 
 .cake-image {
-    width: 350px;
+    width: min(380px, 85vw);
     height: auto;
     border-radius: 20px;
     box-shadow: 0 20px 50px rgba(0,0,0,0.5);
@@ -126,8 +129,8 @@ h1 {
 
 .candle {
     position: absolute;
-    width: 8px;
-    height: 40px;
+    width: clamp(6px, 2vw, 8px);
+    height: clamp(30px, 8vw, 45px);
     background: linear-gradient(to right, #eee, #ddd);
     border-radius: 4px;
 }
@@ -137,8 +140,8 @@ h1 {
     top: -15px;
     left: 50%;
     transform: translateX(-50%);
-    width: 12px;
-    height: 20px;
+    width: clamp(10px, 3vw, 14px);
+    height: clamp(16px, 5vw, 22px);
     background: radial-gradient(circle at 50% 80%, #ffefaa 0%, #ffaa00 50%, #ff3d71 100%);
     border-radius: 50% 50% 20% 20%;
     box-shadow: 0 0 15px #ffaa00;
@@ -158,22 +161,25 @@ h1 {
     margin-top: 1.5rem;
     font-style: italic;
     opacity: 0.6;
+    font-size: 0.9rem;
 }
 
 /* Message Card */
 .message-card {
     background: var(--glass);
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     border: 1px solid var(--glass-border);
-    border-radius: 30px;
-    padding: 3rem;
+    border-radius: 25px;
+    padding: clamp(1.5rem, 5vw, 3.5rem);
     margin-top: 2rem;
-    transform: translateY(50px);
+    width: 100%;
+    max-width: 600px;
+    transform: translateY(30px);
     opacity: 0;
     visibility: hidden;
-    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
-    box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.4);
 }
 
 .message-card.visible {
@@ -183,12 +189,12 @@ h1 {
 }
 
 .message-card h2 {
-    font-size: 2.5rem;
-    margin-bottom: 1.5rem;
+    font-size: clamp(1.8rem, 6vw, 2.8rem);
+    margin-bottom: 1rem;
 }
 
 .message-card p {
-    font-size: 1.1rem;
+    font-size: clamp(0.95rem, 3.5vw, 1.1rem);
     line-height: 1.6;
     margin-bottom: 2rem;
     opacity: 0.9;
@@ -199,19 +205,19 @@ h1 {
     background: linear-gradient(45deg, var(--primary), var(--accent));
     color: white;
     border: none;
-    padding: 12px 30px;
-    font-size: 1.1rem;
+    padding: 14px 35px;
+    font-size: 1rem;
     font-weight: 600;
     border-radius: 50px;
     cursor: pointer;
     transition: all 0.3s ease;
     box-shadow: 0 10px 20px rgba(188, 54, 255, 0.3);
+    width: fit-content;
 }
 
 .btn-primary:hover {
     transform: translateY(-3px);
     box-shadow: 0 15px 30px rgba(188, 54, 255, 0.4);
-    filter: brightness(1.1);
 }
 
 /* Footer */
@@ -219,12 +225,12 @@ h1 {
     margin-top: auto;
     padding: 2rem;
     opacity: 0.4;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
 }
 
 /* Animations */
 @keyframes fadeInDown {
-    from { opacity: 0; transform: translateY(-30px); }
+    from { opacity: 0; transform: translateY(-20px); }
     to { opacity: 1; transform: translateY(0); }
 }
 
@@ -233,9 +239,13 @@ h1 {
     to { opacity: 0.8; }
 }
 
-/* Responsive */
-@media (max-width: 600px) {
-    h1 { font-size: 2.5rem; }
-    .cake-image { width: 280px; }
-    .message-card { padding: 2rem; }
+/* Mobile Adjustments */
+@media (max-width: 480px) {
+    .container {
+        padding: 2rem 0;
+    }
+    
+    .cake-image {
+        border-radius: 15px;
+    }
 }
